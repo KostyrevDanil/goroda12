@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  
+  <script>
+var city1 = {};
+city1.name = "ГородN";
+city1.population = 10000000;
+var city2 = {name: "ГородM", 
+population: 1e6,
+}
+function getName() {
+  return this.name;
+};
+city1.f = getName;
+city2.f = getName;
+function exportStr() {
+  return this.name + '\n' + 'population=' + this.population + '\n';
+}
+
+city1.g = exportStr;
+city2.g = exportStr;
+alert("name=" + city1.name + "\n" + "population=" + city1.population + '\n');
+alert("name=" + city2.name + "\n" + "population=" + city2.population + '\n');
+
+</script>
+
+
+</body>
+</html>
